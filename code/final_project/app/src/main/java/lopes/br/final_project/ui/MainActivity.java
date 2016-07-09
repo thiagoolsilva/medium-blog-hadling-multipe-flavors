@@ -25,8 +25,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import lopes.br.starterproject.R;
-import lopes.br.starterproject.controller.CommunicationController;
+import lopes.br.final_project.R;
+import lopes.br.final_project.communication.util.Constants;
+import lopes.br.final_project.controller.CommunicationController;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Void... voids) {
-            return CommunicationController.getsInstance().GetMessageFromWebServer();
+            return CommunicationController.getsInstance().GetMessageFromWebServer(MainActivity.this);
         }
 
         @Override
@@ -103,8 +104,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener javaSetClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //TODO - You need to change this implementation when you are doing the tutorial
-            final String javaSetFlavourMessage = "";
+            final String javaSetFlavourMessage = Constants.BUILD_NAME;
             Toast.makeText(MainActivity.this, javaSetFlavourMessage, Toast.LENGTH_SHORT).show();
         }
     };

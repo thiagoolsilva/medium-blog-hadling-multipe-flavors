@@ -18,13 +18,13 @@
  */
 package lopes.br.final_project.communication;
 
-import lopes.br.starterproject.communication.model.MessageResponse;
+import lopes.br.final_project.communication.model.MessageResponse;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Path;
 
 public interface ApiRequest {
 
-    @GET("/v2/{type-flavor}")
-    public Call<MessageResponse> GETMessage(@Path("type-flavor") String typeOfFlavor);
+    @GET("/v2/{id-request}")
+    public Call<MessageResponse> GETMessage(@Path("id-request") String idRequest);
 }

@@ -18,14 +18,17 @@
  */
 package lopes.br.final_project.controller;
 
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.annotation.WorkerThread;
 import android.util.Log;
 
 import java.io.IOException;
 
-import lopes.br.starterproject.communication.ApiRequest;
-import lopes.br.starterproject.communication.Request;
-import lopes.br.starterproject.communication.model.MessageResponse;
+import lopes.br.final_project.R;
+import lopes.br.final_project.communication.ApiRequest;
+import lopes.br.final_project.communication.Request;
+import lopes.br.final_project.communication.model.MessageResponse;
 import retrofit.Response;
 
 /**
@@ -61,17 +64,19 @@ public class CommunicationController {
      * @return The message received
      */
     @WorkerThread
-    public String GetMessageFromWebServer() {
+    public String GetMessageFromWebServer(@NonNull Context context) {
         String responseMessage = "";
         ApiRequest apiRequest = Request.createRequests();
 
         try {
-            //TODO - change this implementation when you are doing the tutorial
-            final String typeOfFlavor = "";
+            final String typeOfFlavor = context.getString(R.string.id_message_request);
             Response<MessageResponse> request = apiRequest.GETMessage(typeOfFlavor).execute();
             if(request != null && request.body() != null) {
                 MessageResponse bodyRequest = request.body();
                 responseMessage = bodyRequest.getMessage();
+
+                Log.d(TAG, "result:: "+responseMessage);
+
             }
         } catch (IOException e) {
             Log.d(TAG, "error on request:: "+e.getMessage());
