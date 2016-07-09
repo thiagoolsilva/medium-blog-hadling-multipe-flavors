@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             //Show the result of request.
             //If the request came from production apk than it will show the message "This request came from flavor named production"
             //else it will show the message "This request came from flavor named developed"
-            Toast.makeText(MainActivity.this, resultRequest, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, resultRequest, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -103,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener javaSetClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            //TODO - You need to change this implementation when you are doing the tutorial
+            final String javaSetFlavourMessage = "";
+            Toast.makeText(MainActivity.this, javaSetFlavourMessage, Toast.LENGTH_SHORT).show();
         }
     };
 }

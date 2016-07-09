@@ -21,9 +21,10 @@ package lopes.br.starterproject.communication;
 import lopes.br.starterproject.communication.model.MessageResponse;
 import retrofit.Call;
 import retrofit.http.GET;
+import retrofit.http.Path;
 
 public interface ApiRequest {
 
-    @GET("/57806d2e1000003c1f62fd31")
-    public Call<MessageResponse> GETMessage();
+    @GET("/v2/{type-flavor}")
+    public Call<MessageResponse> GETMessage(@Path("type-flavor") String typeOfFlavor);
 }

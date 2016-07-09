@@ -66,13 +66,17 @@ public class CommunicationController {
         ApiRequest apiRequest = Request.createRequests();
 
         try {
-            Response<MessageResponse> request = apiRequest.GETMessage().execute();
+            //TODO - change this implementation when you are doing the tutorial
+            final String typeOfFlavor = "";
+            Response<MessageResponse> request = apiRequest.GETMessage(typeOfFlavor).execute();
             if(request != null && request.body() != null) {
                 MessageResponse bodyRequest = request.body();
                 responseMessage = bodyRequest.getMessage();
             }
         } catch (IOException e) {
             Log.d(TAG, "error on request:: "+e.getMessage());
+        } catch (Exception e) {
+            Log.d(TAG, "Generic error::"+ e.getMessage());
         }
         return responseMessage;
     }

@@ -36,7 +36,7 @@ public class Request {
     //NOTE: Using the retrofit.You can use the @Path instead of flavor. On this moment, only for study we will use the flavor strategy.
     //NOTE: If you want more details about retrofit. Check this link http://square.github.io/retrofit/
 
-    private final String API_BASE_URL = "";
+    private final static String API_BASE_URL = "http://www.mocky.io";
 
     private static OkHttpClient client = new OkHttpClient();
 
