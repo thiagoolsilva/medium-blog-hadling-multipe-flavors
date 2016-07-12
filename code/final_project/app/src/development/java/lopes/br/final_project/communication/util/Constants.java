@@ -9,6 +9,6 @@ public class Constants {
     /**
      * The constant BUILD_NAME.
      */
-    public static final String BUILD_NAME = "developed";
+    public static final String BUILD_NAME = "development";
 
 }
