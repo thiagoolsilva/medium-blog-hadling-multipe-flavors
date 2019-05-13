@@ -1,4 +1,4 @@
-# Medium Blog Kafka Udemy
+# Medium Blog Handlilng multiple java source and resources using flavors on gradle
 This is the source code supporting the blog post:
 
 <https://medium.com/@thiagolopessilva/the-handling-multiple-java-source-and-resources-using-flavors-on-gradle-18a4b581285b>
